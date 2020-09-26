@@ -13,60 +13,63 @@
         <a class="navbar-brand text-primary" href="high-scores.html">High Scores</a>
     </nav>
     <main class="container-fluid">
-        <div class="jumbotron my-3">
-            <h1 class="display-4">Welcom to the Coding Quiz</h1>
-            <p class="lead">This is a simple Javascript coding quiz try and anwer all the questions as fast as you can to get the highest score</p>
-            <hr class="my-4">
-            <p class="inlie-block mr-2">If your ready click start!</p>
-            <button id="startQuizBtn" class="btn btn-primary">Start Quiz</button>
-            <h4 id="time-left">time Left = <span id=countdown></span></h4>
-        </div>
         <div class="row">
             <div class="col-md-2"></div>   
-            <div class="col-md-8" id="questions-container">
-                <section id="question-set-1" style="display: none">
-                    <h4 class="question-header">This is a question</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="correct">question three correct</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question four</li>
-                    </ul>
-                </section>
-                <section id="question-set-2" style="display: none">
-                    <h4 class="question-header">I hope you know the answer</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-primary question" data-answer="correct">question one correct</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question four</li>
-                    </ul>
-                </section>
-                <section id="question-set-3" style="display: none">
-                    <h4 class="question-header">Because Javascript is awesome</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="correct">question four correct</li>
-                    </ul>
-                </section>
-                <section id="question-set-4" style="display: none">
-                    <h4 class="question-header">Don't let me down!</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
-                        <li class="list-group-item list-group-item-primary question" data-answer="correct">question four correct</li>
-                    </ul>
-                </section>
-                <section id="question-set-3" style="display: none">
-                    <h4>Your Score: <span id="final-score"></span></h4>
-                    <label for="initials">Please Enter your Initials</label> 
-                    <br>
-                    <input type="text" name="initials" id="initials">
-                    <button id="add-person" class="btn btn-danger">Add Score</button>
-                </section>
+            <div class="col-md-8" >
+                <div class="jumbotron my-3">
+                    <h1 class="display-4">Welcom to the Coding Quiz</h1>
+                    <p class="lead">This is a simple Javascript coding quiz try and anwer all the questions as fast as you can to get the highest score</p>
+                    <hr class="my-4">
+                    <p class="inlie-block mr-2">If your ready click start!</p>
+                    <button id="startQuizBtn" class="btn btn-primary">Start Quiz</button>
+                    <h4 id="time-left">time Left = <span id=countdown></span></h4>
+                </div>
+                <div id="questions-container">
+                    <section id="question-set-1" style="display: none">
+                        <h4 class="question-header">This is a question</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="correct">question three correct</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question four</li>
+                        </ul>
+                    </section>
+                    <section id="question-set-2" style="display: none">
+                        <h4 class="question-header">I hope you know the answer</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary question" data-answer="correct">question one correct</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question four</li>
+                        </ul>
+                    </section>
+                    <section id="question-set-3" style="display: none">
+                        <h4 class="question-header">Because Javascript is awesome</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="correct">question four correct</li>
+                        </ul>
+                    </section>
+                    <section id="question-set-4" style="display: none">
+                        <h4 class="question-header">Don't let me down!</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question one</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question two</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="wrong">question three</li>
+                            <li class="list-group-item list-group-item-primary question" data-answer="correct">question four correct</li>
+                        </ul>
+                    </section>
+                    <section id="question-set-3" style="display: none">
+                        <h4>Your Score: <span id="final-score"></span></h4>
+                        <label for="initials">Please Enter your Initials</label> 
+                        <br>
+                        <input type="text" name="initials" id="initials">
+                        <button id="add-person" class="btn btn-danger">Add Score</button>
+                    </section>
+                </div>
+ 
             </div>
             <div class="col-md-2"></div>
         </div>
