@@ -1,6 +1,10 @@
 .inlie-block {
     display: inline-block;
 }
+.questions-container {
+    max-width: 1024px;
+}
+
 #time-left {
     display: none;
 }
@@ -11,7 +15,7 @@ li {
 
 /* ---------- High Scores Page------------- */
 
-.jumbotron {
+.high-score-jb {
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
