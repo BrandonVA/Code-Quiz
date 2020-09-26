@@ -8,3 +8,11 @@ li {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/* ---------- High Scores Page------------- */
+
+.jumbotron {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
