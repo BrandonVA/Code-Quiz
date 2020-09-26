@@ -137,8 +137,22 @@ const addScore = () => {
     
     // Creates a var for the old Obj and parse it to make it usable(not a string)
     var old_listOfScores = JSON.parse(localStorage.getItem('listOfScores'));
+
+
+    // -----------------------------------------need to validate if user is filled out next----------
+    // and if they filed out the value
+
+    // checking if the user already has a value and if they do do they want to override their score
+    
+    var checkIfUserExists = true;
+    if ( old_listOfScores.hasOwnProperty(user) ) {
+        checkIfUserExists = confirm('This user already has a score of: '+ old_listOfScores[user] + ' do you want to overide it?');
+    }
+
+
+
     // Sets a new key with user and the score as a value.
-    old_listOfScores[user] = score;
+    if (checkIfUserExists) {old_listOfScores[user] = score;}
 
     // Once the loacal storage Obj is updated convert back to a string to be used agian later.
     localStorage.setItem('listOfScores', JSON.stringify(old_listOfScores))
@@ -206,3 +220,7 @@ if (addPersonBtn !== null) {
 document.querySelectorAll('.question').forEach( item => { 
     item.addEventListener('click', checkAnswer)
 })
+
+
+
+
