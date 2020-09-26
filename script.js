@@ -5,6 +5,7 @@ var countdowunEl = document.getElementById('countdown');
 var timeLeft = document.getElementById('time-left');
 var finalScore = document.getElementById('final-score');
 var addPersonBtn = document.getElementById('add-person');
+let buttonContainerEl = document.getElementById('button-container');
 
 // Selectors for high-scores.html
 var showScoresBtn = document.getElementById('show-scores');
@@ -50,7 +51,7 @@ const startGame = () => {
 
     // Handles main flow of the game below 
     // hide start button, start countdown, and start showing first question along with countdown
-    hideElement(startButtunEl); 
+    hideElement(buttonContainerEl); 
     startCountdown();
     showElement(questionsContainer.children[counter]);
     showElement(timeLeft);
@@ -73,7 +74,7 @@ const startCountdown = () => {
         if (timer === 0 || counter === endTimer) {
             // clears gameTimer, shows button, hides time left and updates the score
             clearInterval(gameTimer);
-            showElement(startButtunEl, 'inline');
+            showElement(buttonContainerEl);
             hideElement(timeLeft);
             finalScore.textContent = score;
             return countdowunEl.textContent = timer;
@@ -208,7 +209,7 @@ const appendHidhScores = () => {
 // -------------------------- EVENT Listeners -------------------------------------------------
 // added checks to prevent errors on pages without specified elements created on them 
 
-if (showScoresBtn !== null) {
+if (document.getElementById('list-of-scores') !== null) {
     appendHidhScores()
     
 }
