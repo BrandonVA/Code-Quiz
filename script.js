@@ -6,6 +6,8 @@ var timeLeft = document.getElementById('time-left');
 var finalScore = document.getElementById('final-score');
 var addPersonBtn = document.getElementById('add-person');
 let buttonContainerEl = document.getElementById('button-container');
+let answersCorrectEl = document.getElementById('answers-correct')
+let finalResultsEl = document.getElementById('final-results');
 
 // Selectors for high-scores.html
 var showScoresBtn = document.getElementById('show-scores');
@@ -15,6 +17,7 @@ var timer = 40;
 let counter = 0;
 var score = 0;
 let endTimer;
+let answersCorrect = 0;
 // Adding a check to prevent an error on high-scores page
 if(questionsContainer !== null) {
     // Sets a var to number of the index of the last question asked.
@@ -41,16 +44,22 @@ const showElement = (elementToShow, displayStyle) => {
 
 // ---------------------Main function that Starts the flow of the game. -----------------------------------------------
 const startGame = () => {
+    let allListItemEl = document.querySelectorAll('li');
+    allListItemEl.forEach(elment => elment.classList.remove('correct', 'wrong'))
 
+
+    
     // Hides last element left in the questionsContainer to clear it for a new run
     hideElement(questionsContainer.children[counter]);
 
     // Resets vars back to defualt values
     timer = 40;
     counter = 0;
+    answersCorrect = 0;
 
     // Handles main flow of the game below 
     // hide start button, start countdown, and start showing first question along with countdown
+    hideElement(finalResultsEl);
     hideElement(buttonContainerEl); 
     startCountdown();
     showElement(questionsContainer.children[counter]);
@@ -78,11 +87,13 @@ const startCountdown = () => {
             hideElement(timeLeft);
             if (counter < endTimer) {
                 hideElement(questionsContainer.children[counter]);
-                counter = endTimer
+                counter = endTimer;
 
             }
-            
+            answersCorrectEl.textContent = answersCorrect
             showElement(questionsContainer.children[counter]);
+            showElement(finalResultsEl)
+            console.log( answersCorrect );
 
             finalScore.textContent = score;
             // return countdowunEl.textContent = timer;
@@ -114,18 +125,32 @@ const checkAnswer = event => {
 
     // If anwer is wrong take some time away.
     if (listItemEl.getAttribute('data-answer') === 'wrong') {
+        listItemEl.classList.add('wrong');
         timer = timer-2;
+    } else {
+        listItemEl.classList.add('correct');
+        answersCorrect++
     }
+    let changeColor = setTimeout(() => {
+        hideElement(questionsContainer.children[counter])
+        counter++;
+        showElement(questionsContainer.children[counter])
+        clearTimeout(changeColor)
+            // If counter is equal to the last question update score 
+        if (counter === endTimer) {
+            score = timer
+            console.log(score);
+        }
+    },100)
+    
     // Hides current question, increments counter and shows the next question
-    hideElement(questionsContainer.children[counter])
-    counter++;
-    showElement(questionsContainer.children[counter])
 
-    // If counter is equal to the last question update score 
-    if (counter === endTimer) {
-       score = timer
-        console.log(score);
-    }
+    
+
+
+
+
+
 
 };
 
