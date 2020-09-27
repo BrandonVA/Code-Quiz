@@ -11,7 +11,7 @@ let buttonContainerEl = document.getElementById('button-container');
 var showScoresBtn = document.getElementById('show-scores');
 
 // Setting up main vars to be used throughout the game
-var timer = 20;
+var timer = 40;
 let counter = 0;
 var score = 0;
 let endTimer;
@@ -46,7 +46,7 @@ const startGame = () => {
     hideElement(questionsContainer.children[counter]);
 
     // Resets vars back to defualt values
-    timer = 20;
+    timer = 40;
     counter = 0;
 
     // Handles main flow of the game below 
