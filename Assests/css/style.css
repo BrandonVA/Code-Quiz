@@ -1,6 +1,8 @@
 .inlie-block {
     display: inline-block;
 }
+
+
 .questions-container {
     max-width: 1024px;
 }
@@ -20,3 +22,12 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
+
+@media (max-width: 575.98px) { 
+    .display-4 {
+        font-size: 2.5rem;
+    } 
+    .high-scores-div {
+        display: none;
+    }
+ }
