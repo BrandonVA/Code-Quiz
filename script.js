@@ -142,34 +142,28 @@ const addScore = () => {
     if (user === '') {
         alert('Please fill enter your name or initials.')
     } else {
-    // If listOfScores Obj isn't created yet make one.
-    if (localStorage.getItem('listOfScores') === null){
-        localStorage.setItem('listOfScores', '{}');
-       }
-       
-       // Creates a var for the old Obj and parse it to make it usable(not a string)
-       var old_listOfScores = JSON.parse(localStorage.getItem('listOfScores'));
-   
-   
-       // -----------------------------------------need to validate if user is filled out next----------
-       // and if they filed out the value
-   
-       // checking if the user already has a value and if they do do they want to override their score
-       
-       var checkIfUserExists = true;
-       if ( old_listOfScores.hasOwnProperty(user) ) {
-           checkIfUserExists = confirm('This user already has a score of: '+ old_listOfScores[user] + ' do you want to overide it?');
-       }
-   
-   
-   
-       // Sets a new key with user and the score as a value.
-       if (checkIfUserExists) {old_listOfScores[user] = score;}
-   
-       // Once the loacal storage Obj is updated convert back to a string to be used agian later.
-       localStorage.setItem('listOfScores', JSON.stringify(old_listOfScores))
-       // Hides Element that contains input and add user btn.
-       hideElement(questionsContainer.children[counter]);
+
+        // If listOfScores Obj isn't created yet make one.
+        if (localStorage.getItem('listOfScores') === null){
+            localStorage.setItem('listOfScores', '{}');
+        }
+        
+        // Creates a var for the old Obj and parse it to make it usable(not a string)
+        var old_listOfScores = JSON.parse(localStorage.getItem('listOfScores'));
+     
+        // checking if the user already has a value and if they do do they want to override their score 
+        var checkIfUserExists = true;
+        if ( old_listOfScores.hasOwnProperty(user) ) {
+            checkIfUserExists = confirm('This user already has a score of: '+ old_listOfScores[user] + ' do you want to overide it?');
+        }
+
+        // Sets a new key with user and the score as a value.
+        if (checkIfUserExists) {old_listOfScores[user] = score;}
+    
+        // Once the loacal storage Obj is updated convert back to a string to be used agian later.
+        localStorage.setItem('listOfScores', JSON.stringify(old_listOfScores))
+        // Hides Element that contains input and add user btn.
+        hideElement(questionsContainer.children[counter]);
     }
 
 }
@@ -202,6 +196,7 @@ const appendHidhScores = () => {
             // logic to handle creating an element
            var pEl =  document.createElement('p');
            // updating the text content of the p to access the values of the sub array created from sorting.
+           // Could have been an ol “¯\_(ツ)_/¯“
            pEl.textContent = `${i + 1}. ${sortedList[i][0]}: ${sortedList[i][1]}`;
            listOfScoresEl.appendChild(pEl);
 
