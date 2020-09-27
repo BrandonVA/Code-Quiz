@@ -15,19 +15,17 @@ li {
     margin-bottom: 10px;
 }
 
-/* ---------- High Scores Page------------- */
 
-.high-score-jb {
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-@media (max-width: 575.98px) { 
+@media (max-width: 1200px) { 
     .display-4 {
         font-size: 2.5rem;
     } 
     .high-scores-div {
         display: none;
+    }
+    .main-content {
+        max-width: 96%;
+        margin: 2rem auto;
     }
  }
