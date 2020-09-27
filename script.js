@@ -9,8 +9,7 @@ let buttonContainerEl = document.getElementById('button-container');
 let answersCorrectEl = document.getElementById('answers-correct')
 let finalResultsEl = document.getElementById('final-results');
 
-// Selectors for high-scores.html
-var showScoresBtn = document.getElementById('show-scores');
+
 
 // Setting up main vars to be used throughout the game
 var timer = 40;
@@ -224,6 +223,7 @@ const appendHidhScores = () => {
            // updating the text content of the p to access the values of the sub array created from sorting.
            // Could have been an ol “¯\_(ツ)_/¯“
            pEl.textContent = `${i + 1}. ${sortedList[i][0]}: ${sortedList[i][1]}`;
+           pEl.classList.add('ml-1')
            listOfScoresEl.appendChild(pEl);
 
         }

@@ -6,12 +6,18 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assests/css/style.css">
+    <link rel="apple-touch-icon"sizes="180x180"href="./Assests/favicon/apple-touch-icon.png">
+    <link rel="icon"type="image/png"sizes="32x32"href="./Assests/favicon/favicon-32x32.png">
+    <link rel="icon"type="image/png"sizes="16x16"href="./Assests/favicon/favicon-16x16.png">
+    <link rel="manifest"href="./Assests/favicon/site.webmanifest">
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand text-primary" href="#">Home</a>
-        <a class="navbar-brand text-primary" href="high-scores.html">High Scores</a>
-    </nav>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand text-primary" href="#">Home</a>
+            <a class="navbar-brand text-primary" href="high-scores.html">High Scores</a>
+        </nav>
+    </header>
     <main class="container-fluid">
         <div class="row">
             <div class="col-md-2"></div>   
@@ -32,9 +38,9 @@
                     </div>
                     <h4 id="time-left">time Left = <span id=countdown></span></h4>
                 </div>
-                <div id="questions-container">
-                    <section id="question-set-1" style="display: none">
-                        <h4 class="question-header">What method is used to listen for a click event?</h4>
+                <div id="questions-container" class=" bg-light rounded">
+                    <section class="m-5 py-2" style="display: none">
+                        <h4 class="question-header mt-3">What method is used to listen for a click event?</h4>
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">.listenFor()</li>
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">.whenClicked()</li>
@@ -42,8 +48,8 @@
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">onClickEvent()</li>
                         </ul>
                     </section>
-                    <section id="question-set-2" style="display: none">
-                        <h4 class="question-header">What is right arrow function syntax</h4>
+                    <section class="m-5 py-2" style="display: none">
+                        <h4 class="question-header mt-3">What is right arrow function syntax</h4>
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary question" data-answer="correct">const func = () => {}</li>
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">function() -> {}</li>
@@ -51,8 +57,8 @@
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">function => () {}</li>
                         </ul>
                     </section>
-                    <section id="question-set-3" style="display: none">
-                        <h4 class="question-header">What data type is true or false </h4>
+                    <section class="m-5 py-2" style="display: none">
+                        <h4 class="question-header mt-3">What data type is true or false </h4>
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">null</li>
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">numbers</li>
@@ -60,8 +66,8 @@
                             <li class="list-group-item list-group-item-primary question" data-answer="correct">Boolean</li>
                         </ul>
                     </section>
-                    <section id="question-set-4" style="display: none">
-                        <h4 class="question-header">How long did it take to develop javascript</h4>
+                    <section class="m-5 py-2" style="display: none">
+                        <h4 class="question-header mt-3">How long did it take to develop javascript</h4>
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">4 months</li>
                             <li class="list-group-item list-group-item-primary question" data-answer="wrong">1 year</li>
@@ -69,7 +75,7 @@
                             <li class="list-group-item list-group-item-primary question" data-answer="correct">10 days</li>
                         </ul>
                     </section>
-                    <section id="question-set-3" style="display: none">
+                    <section class="m-5 py-2" style="display: none">
                         <h4 id="final-results">Your Score: <span id="final-score"></span>   Correct = <span id="answers-correct"></span></h4>
                         <label for="initials">Please Enter your Initials</label> 
                         <br>
@@ -82,6 +88,9 @@
             <div class="col-md-2"></div>
         </div>
     </main>
+    <footer class="text-center footer bg-light">
+        <p>&#169;Brandon VanAllen</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

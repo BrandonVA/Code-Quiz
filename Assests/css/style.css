@@ -1,11 +1,22 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #6c757d;
+}
+header nav {
+    background-color: #e9ecef;
+}
+
 .inlie-block {
     display: inline-block;
 }
 
 
-.questions-container {
-    max-width: 1024px;
-}
+
 
 #time-left {
     display: none;
@@ -22,7 +33,11 @@ li {
     background-color: rgba(247, 67, 67, 0.692);
 }
 
-
+footer {
+    margin-top: auto;
+    border-top: 2px solid #007bff;
+    
+}
 
 @media (max-width: 1200px) { 
     .display-4 {
@@ -36,3 +51,4 @@ li {
         margin: 2rem auto;
     }
  }
+
