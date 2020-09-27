@@ -76,7 +76,7 @@ const startCountdown = () => {
             clearInterval(gameTimer);
             showElement(buttonContainerEl);
             hideElement(timeLeft);
-            if (counter === 0) {
+            if (counter < endTimer) {
                 hideElement(questionsContainer.children[counter]);
                 counter = endTimer
 
