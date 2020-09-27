@@ -1,10 +1,10 @@
 // Selectors for index.html
-var startButtunEl = document.getElementById('startQuizBtn');
-var questionsContainer = document.getElementById('questions-container');
-var countdowunEl = document.getElementById('countdown');
-var timeLeft = document.getElementById('time-left');
-var finalScore = document.getElementById('final-score');
-var addPersonBtn = document.getElementById('add-person');
+let startButtunEl = document.getElementById('startQuizBtn');
+let questionsContainer = document.getElementById('questions-container');
+let countdowunEl = document.getElementById('countdown');
+let timeLeft = document.getElementById('time-left');
+let finalScore = document.getElementById('final-score');
+let addPersonBtn = document.getElementById('add-person');
 let buttonContainerEl = document.getElementById('button-container');
 let answersCorrectEl = document.getElementById('answers-correct')
 let finalResultsEl = document.getElementById('final-results');
@@ -12,9 +12,9 @@ let finalResultsEl = document.getElementById('final-results');
 
 
 // Setting up main vars to be used throughout the game
-var timer = 40;
+let timer = 40;
 let counter = 0;
-var score = 0;
+let score = 0;
 let endTimer;
 let answersCorrect = 0;
 // Adding a check to prevent an error on high-scores page
@@ -43,11 +43,11 @@ const showElement = (elementToShow, displayStyle) => {
 
 // ---------------------Main function that Starts the flow of the game. -----------------------------------------------
 const startGame = () => {
+
+    // Gets all the list items and removes any background styles apllied with the classes correct or wrong.
     let allListItemEl = document.querySelectorAll('li');
     allListItemEl.forEach(elment => elment.classList.remove('correct', 'wrong'))
-
-
-    
+ 
     // Hides last element left in the questionsContainer to clear it for a new run
     hideElement(questionsContainer.children[counter]);
 
@@ -77,7 +77,7 @@ const startGame = () => {
 const startCountdown = () => {
     
     // Setting interval up to handle logic every 1 second
-    var gameTimer = setInterval(() => {
+    let gameTimer = setInterval(() => {
 
         // if timer === 0 or last question is completed. Handles end of the game logic.
         if (timer === 0 || counter === endTimer) {
@@ -88,13 +88,10 @@ const startCountdown = () => {
             if (counter < endTimer) {
                 hideElement(questionsContainer.children[counter]);
                 counter = endTimer;
-
             }
             answersCorrectEl.textContent = answersCorrect
             showElement(questionsContainer.children[counter]);
             showElement(finalResultsEl)
-            console.log( answersCorrect );
-
             finalScore.textContent = score;
             // return countdowunEl.textContent = timer;
         }
@@ -118,20 +115,22 @@ const checkAnswer = event => {
 
     // Getting target of the click event.
     let listItemEl = event.target
-    console.log(listItemEl);
+
     // Getting value of the data-answer attribute
     let answerData = listItemEl.getAttribute('data-answer')
-    console.log(answerData);
-
-    // If anwer is wrong take some time away.
-    if (listItemEl.getAttribute('data-answer') === 'wrong') {
+    
+    // If anwer is wrong take some time away and turn background red.
+    if (answerData === 'wrong') {
         listItemEl.classList.add('wrong');
         timer = timer-2;
     } else {
+        // anwer is correct add 1 to answersCorrect and turn background green.
         listItemEl.classList.add('correct');
         answersCorrect++
     }
+    // Waits 100 ms so the user can see if their anwer is correct or wrong.
     let changeColor = setTimeout(() => {
+        // Hides current question, increments counter and shows the next question
         hideElement(questionsContainer.children[counter])
         counter++;
         showElement(questionsContainer.children[counter])
@@ -139,19 +138,8 @@ const checkAnswer = event => {
             // If counter is equal to the last question update score 
         if (counter === endTimer) {
             score = timer
-            console.log(score);
         }
     },100)
-    
-    // Hides current question, increments counter and shows the next question
-
-    
-
-
-
-
-
-
 };
 
 
@@ -162,22 +150,21 @@ const checkAnswer = event => {
 const addScore = () => {
     
     // Stores value of input into a var 
-    var user =  document.getElementById('initials').value;
+    let user =  document.getElementById('initials').value;
 
     if (user === '') {
         alert('Please fill enter your name or initials.')
     } else {
-
         // If listOfScores Obj isn't created yet make one.
         if (localStorage.getItem('listOfScores') === null){
             localStorage.setItem('listOfScores', '{}');
         }
         
         // Creates a var for the old Obj and parse it to make it usable(not a string)
-        var old_listOfScores = JSON.parse(localStorage.getItem('listOfScores'));
+        let old_listOfScores = JSON.parse(localStorage.getItem('listOfScores'));
      
         // checking if the user already has a value and if they do do they want to override their score 
-        var checkIfUserExists = true;
+        let checkIfUserExists = true;
         if ( old_listOfScores.hasOwnProperty(user) ) {
             checkIfUserExists = confirm('This user already has a score of: '+ old_listOfScores[user] + ' do you want to overide it?');
         }
@@ -203,23 +190,19 @@ const appendHidhScores = () => {
     // Checks if listOf Scores is created yet if true...
     if (localStorage.getItem('listOfScores') !== null) {
         
-        console.log("passed condition");
-
         // Selects the Element to add the scores to
-        var listOfScoresEl = document.getElementById('list-of-scores');
+        let listOfScoresEl = document.getElementById('list-of-scores');
         // Creates a var to store list of Scores then, convert to an array 
         // and sort them out with highest on top
-        var listToSort = JSON.parse(localStorage.getItem('listOfScores'));
+        let listToSort = JSON.parse(localStorage.getItem('listOfScores'));
         listToSort = Object.entries(listToSort);
-        var sortedList = listToSort.sort((a,b) => b[1] - a[1])
-
-        console.log(sortedList.length);
+        let sortedList = listToSort.sort((a,b) => b[1] - a[1])
 
         // Once we have a sorted list of users and their scores append them to the dom
         // using a for loop 
-        for (var i = 0; i < sortedList.length; i++) {
+        for (let i = 0; i < sortedList.length; i++) {
             // logic to handle creating an element
-           var pEl =  document.createElement('p');
+           let pEl =  document.createElement('p');
            // updating the text content of the p to access the values of the sub array created from sorting.
            // Could have been an ol “¯\_(ツ)_/¯“
            pEl.textContent = `${i + 1}. ${sortedList[i][0]}: ${sortedList[i][1]}`;
