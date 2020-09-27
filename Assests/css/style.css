@@ -7,17 +7,18 @@ body {
     flex-direction: column;
     background-color: #6c757d;
 }
+
+
+/* --------------------Styles for header and nav----------------------------------------------------------------- */
 header nav {
     background-color: #e9ecef;
 }
-
 .inlie-block {
     display: inline-block;
 }
 
 
-
-
+/*  ------------------ Styles for main content sections where questions and data is being displayed ------------------*/
 #time-left {
     display: none;
 }
@@ -26,6 +27,8 @@ li {
     margin-bottom: 10px;
 }
 
+
+/* -----------------------------Styles for background of right or wrong answers in main content -----------------------*/
 .correct {
     background-color: rgba(6, 241, 6, 0.521);
 }
@@ -33,12 +36,26 @@ li {
     background-color: rgba(247, 67, 67, 0.692);
 }
 
+
+
+
+/* -------------------------------Footer------------------------------------------------------ */
+
 footer {
     margin-top: auto;
     border-top: 2px solid #007bff;
     
 }
 
+
+/* ------------------------------High Scores page---------------------------------------------------- */
+#list-of-scores  {
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+
+
+/* ---------------------------Break point ----------------------------------------------- */
 @media (max-width: 1200px) { 
     .display-4 {
         font-size: 2.5rem;
