@@ -56,6 +56,7 @@ const startGame = () => {
     timer = 40;
     counter = 0;
     answersCorrect = 0;
+    score = 0;
 
     // Handles main flow of the game below 
     // hide start button, start countdown, and start showing first question along with countdown
