@@ -15,6 +15,13 @@ li {
     margin-bottom: 10px;
 }
 
+.correct {
+    background-color: rgba(6, 241, 6, 0.521);
+}
+.wrong {
+    background-color: rgba(247, 67, 67, 0.692);
+}
+
 
 
 @media (max-width: 1200px) { 
