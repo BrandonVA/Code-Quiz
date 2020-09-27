@@ -202,7 +202,7 @@ const appendHidhScores = () => {
             // logic to handle creating an element
            var pEl =  document.createElement('p');
            // updating the text content of the p to access the values of the sub array created from sorting.
-           pEl.textContent = `${sortedList[i][0]}: ${sortedList[i][1]}`;
+           pEl.textContent = `${i + 1}. ${sortedList[i][0]}: ${sortedList[i][1]}`;
            listOfScoresEl.appendChild(pEl);
 
         }
