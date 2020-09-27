@@ -24,7 +24,7 @@ if(questionsContainer !== null) {
 
 
 // functions to hide or show an element             
-const hideElement = elementToHide => { if(elementToHide!== undefined) {elementToHide.style.display = 'none'} }
+const hideElement = elementToHide => { if(elementToHide !== undefined) {elementToHide.style.display = 'none'} }
 const showElement = (elementToShow, displayStyle) => { 
     // conditional checks to prevent errors on undefined elements/styles
     if (elementToShow !== undefined & displayStyle === undefined) { 
@@ -76,8 +76,16 @@ const startCountdown = () => {
             clearInterval(gameTimer);
             showElement(buttonContainerEl);
             hideElement(timeLeft);
+            if (counter === 0) {
+                hideElement(questionsContainer.children[counter]);
+                counter = endTimer
+
+            }
+            
+            showElement(questionsContainer.children[counter]);
+
             finalScore.textContent = score;
-            return countdowunEl.textContent = timer;
+            // return countdowunEl.textContent = timer;
         }
         else {
             // If game is not over decrement 1 from timer
