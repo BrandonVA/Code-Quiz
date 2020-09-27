@@ -187,12 +187,13 @@ const addScore = () => {
 // Function to handle Adding all users and their scores to the high-scores page.
 const appendHidhScores = () => {
 
+    // Selects the Element to add the scores to
+    let listOfScoresEl = document.getElementById('list-of-scores');
+
     // Checks if listOf Scores is created yet if true...
     if (localStorage.getItem('listOfScores') !== null) {
         
-        // Selects the Element to add the scores to
-        let listOfScoresEl = document.getElementById('list-of-scores');
-        // Creates a var to store list of Scores then, convert to an array 
+        // Creates a var to store list of Scores Obj then, convert to an array 
         // and sort them out with highest on top
         let listToSort = JSON.parse(localStorage.getItem('listOfScores'));
         listToSort = Object.entries(listToSort);
@@ -210,6 +211,11 @@ const appendHidhScores = () => {
            listOfScoresEl.appendChild(pEl);
 
         }
+
+    }
+    
+    if (listOfScoresEl.children.length === 0){
+        hideElement(listOfScoresEl);
     }
 
 }
