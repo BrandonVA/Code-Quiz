@@ -8,6 +8,7 @@ let addPersonBtn = document.getElementById('add-person');
 let buttonContainerEl = document.getElementById('button-container');
 let answersCorrectEl = document.getElementById('answers-correct')
 let finalResultsEl = document.getElementById('final-results');
+let gameDescriptionEl = document.getElementById('game-description');
 
 
 
@@ -43,6 +44,7 @@ const showElement = (elementToShow, displayStyle) => {
 
 // ---------------------Main function that Starts the flow of the game. -----------------------------------------------
 const startGame = () => {
+    checkScreenWidth();
 
     // Gets all the list items and removes any background styles apllied with the classes correct or wrong.
     let allListItemEl = document.querySelectorAll('li');
@@ -92,6 +94,7 @@ const startCountdown = () => {
             answersCorrectEl.textContent = answersCorrect
             showElement(questionsContainer.children[counter]);
             showElement(finalResultsEl)
+            showElement(gameDescriptionEl);
             finalScore.textContent = score;
             // return countdowunEl.textContent = timer;
         }
@@ -219,6 +222,26 @@ const appendHidhScores = () => {
     }
 
 }
+
+
+
+// function to check screen width if below 
+const checkScreenWidth = () => {
+    // storing value of the width of the screen
+    let screenX = screen.width;
+    // Checking if its below 530 and hiding an element.
+    if (screenX <= 530 ){
+        hideElement(gameDescriptionEl);
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
