@@ -6,12 +6,14 @@
 
 -Picture of the game in action.
 
-[Project Page](https://github.com/BrandonVA/Code-Quiz) <br />
-[Live Site](https://brandonva.github.io/Code-Quiz/)
+
 
 # Overview
 
 This is a simple multiple choice Javascript quiz game. The goal of this project was to build a multiple choice game using plain javascript. The Html and css gets updated and changed using javascript to build an interactive multiple choice game. The users scores can be stored using local storage so their high scores can still be availble if the application gets closed or rereshed.
+
+[Project Page](https://github.com/BrandonVA/Code-Quiz) <br />
+[Live Site](https://brandonva.github.io/Code-Quiz/)
 
 # Technologies 
 -[Favicons](https://favicon.io/)<br />
