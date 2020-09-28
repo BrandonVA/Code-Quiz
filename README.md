@@ -1,8 +1,13 @@
 # Code Quiz - Week 4 Homework
 ## Project Image
+
+
 <img src="Assests/images/project-img.png">
 
 -Picture of the game in action.
+
+[Project Page](https://github.com/BrandonVA/Code-Quiz) <br />
+[Live Site](https://brandonva.github.io/Code-Quiz/)
 
 # Overview
 
