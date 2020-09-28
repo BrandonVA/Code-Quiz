@@ -69,3 +69,14 @@ footer {
     }
  }
 
+ @media (max-width: 413px) { 
+
+     #add-person {
+         margin-top: 15px;
+         margin-bottom: 15px;
+     }
+     #final-results {
+         font-size: 1.3rem;
+     }
+ }
+
